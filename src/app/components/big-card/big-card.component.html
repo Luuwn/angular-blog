@@ -1,15 +1,15 @@
 <div class="container_big-card">
     <div class="big-card_photo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1022px-Placeholder_view_vector.svg.png"
+        <img src="{{ photoCover }}"
             alt="imagem" width="100%">
     </div>
     <div class="big-card_date">
-        <span>Setembro 24, 2023</span>
+        <span>{{cardDate}}</span>
     </div>
     <div class="big-card_title">
-        <h1><a href="">SAIU!!! Nova versão do Angular explode a mente dos devs</a></h1>
+        <h1><a href="">{{cardTitle}}</a></h1>
     </div>
     <div class="big-card_description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus nibh, dignissim eu libero nec, hendrerit accumsan est. Suspendisse auctor lectus tellus, quis dignissim tellus facilisis id. Morbi id magna quis quam eleifend mollis non sit amet leo.</p>
+        <p>{{cardDescription}}</p>
     </div>
 </div>
