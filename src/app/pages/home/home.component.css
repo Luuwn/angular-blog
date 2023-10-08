@@ -1,0 +1,12 @@
+.container_articles{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+/* .articles_main{
+
+}
+
+.articles_side{} */
