@@ -1,18 +1,44 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { dataFake } from '../../data/dataFake'
 
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
-export class ContentComponent {
+export class ContentComponent implements OnInit {
 
-  photoCover:string = "https://img.freepik.com/vetores-gratis/fundo-azul-abstrato_1182-594.jpg"
+  photoCover:string = ""
 
-  contentTitle:string = "Azuis, azuis e azuis: Nova Era do Azul"
+  contentTitle:string = ""
 
-  contentDescription:string = "No espectro solar, a cor que se situa entre o verde e o violeta: o azul do céu. O que possui essa cor: esteve no casamento vestido de azul. Poético: O espaço celeste em que os astros estão localizados; firmamento, céu."
+  contentDescription:string = ""
 
+  private id:string | null = "0"
+
+  constructor(
+    private route:ActivatedRoute
+  ){}
+
+  ngOnInit(): void {
+      this.route.paramMap.subscribe( value =>
+        this.id = value.get("id")
+      )
+
+      this.setValuesToComponent(this.id)
+  }
+
+  setValuesToComponent(id:string | null){
+    const result = dataFake.filter(article => article.id == id)[0]
+
+    this.photoCover = result.photoCover
+    this.contentTitle = result.title
+    this.contentDescription = result.description
+
+    console.log(result)
+
+  }
 
   
 }
