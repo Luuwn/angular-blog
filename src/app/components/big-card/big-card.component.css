@@ -16,6 +16,10 @@
     min-width: 400px;
 }
 
+.big-card_elements-text{
+    padding: .5rem;
+}
+
 .big-card_date > span{
     font-size: .7rem;
     color: darkgrey;
